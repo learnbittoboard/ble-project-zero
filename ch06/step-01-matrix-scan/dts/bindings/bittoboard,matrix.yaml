@@ -1,0 +1,19 @@
+# Copyright (c) 2026 Bit to Board
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  A hand-wired switch matrix: row outputs driven one at a time,
+  column inputs read back. Each switch sits at a row/column
+  crossing with a diode in series (cathode toward the row).
+
+compatible: "bittoboard,matrix"
+
+properties:
+  row-gpios:
+    type: phandle-array
+    required: true
+    description: GPIO lines that drive the matrix rows, in order.
+  col-gpios:
+    type: phandle-array
+    required: true
+    description: GPIO lines that read the matrix columns, in order.
