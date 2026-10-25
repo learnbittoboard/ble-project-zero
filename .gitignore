@@ -1,0 +1,16 @@
+# Zephyr / west build output
+build/
+build-*/
+
+# Compiled artifacts
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.a
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
