@@ -1,0 +1,37 @@
+/* The pad, on the Seeed XIAO nRF52840.
+ *
+ * The matrix moves to the XIAO pads (same 3 by 4 grid):
+ * rows: D0 P0.02, D1 P0.03, D2 P0.28
+ * cols: D3 P0.29, D4 P0.04, D5 P0.05, D6 P1.11
+ *
+ * The board also wires the LiPo cell to a voltage divider whose tap
+ * lands on AIN7 (P0.31, an internal pin, not a pad). The vbatt node
+ * below describes that divider to the firmware: output-ohms is the
+ * lower leg, full-ohms is both legs together, and the divider is
+ * only connected while P1.09 is held low, so the cell is not drained
+ * through the resistors between readings.
+ *
+ * DESK CHECK: divider values and the enable pin follow Seeed's
+ * published schematic for the XIAO nRF52840; verify against the
+ * schematic for your board revision before trusting a reading.
+ */
+/ {
+	matrix: matrix {
+		compatible = "bittoboard,matrix";
+		row-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 3 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 28 GPIO_ACTIVE_HIGH>;
+		col-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 4 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 5 GPIO_ACTIVE_HIGH>,
+			    <&gpio1 11 GPIO_ACTIVE_HIGH>;
+	};
+
+	vbatt: vbatt {
+		compatible = "voltage-divider";
+		io-channels = <&adc 7>;
+		output-ohms = <470000>;
+		full-ohms = <940000>;
+		power-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
+	};
+};
