@@ -1,0 +1,16 @@
+/* Matrix on the DK Arduino header:
+ * rows: A0 P0.03, A1 P0.04, A2 P0.28
+ * cols: A3 P0.29, A4 P0.30, A5 P0.31, D2 P1.03
+ */
+/ {
+	matrix: matrix {
+		compatible = "bittoboard,matrix";
+		row-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 4 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 28 GPIO_ACTIVE_HIGH>;
+		col-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 30 GPIO_ACTIVE_HIGH>,
+			    <&gpio0 31 GPIO_ACTIVE_HIGH>,
+			    <&gpio1 3 GPIO_ACTIVE_HIGH>;
+	};
+};
