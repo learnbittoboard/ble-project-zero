@@ -31,15 +31,17 @@ Each chapter's exercises live in their own folder, one folder per step:
 ```
 ch01/step-01-hello-logging        build, flash, and read the log
 ch01/step-02-shell-led            your first shell commands
-ch02/step-01-button-interrupt     interrupts hand off to work
-ch02/step-02-debounce             a press is a pattern, not an edge
-ch03/step-01-advertiser           be seen: advertising and connections
-ch04/step-01-hids-buttons         the board becomes a keyboard
-ch05/step-01-bonded-keyboard      pairing, bonding, bond management
-ch06/step-01-matrix-scan          the hand-wired 3 by 4 matrix, scanned
-ch06/step-02-matrix-keyboard      the matrix types over the bonded link
-ch07/step-01-keymap-layers        keymaps, a layer, media keys, DIS
-ch08/step-01-xiao-pad             finale: the XIAO pad with a battery
+ch02/step-01-threads-queue        two threads and a queue move key events
+ch02/step-02-button-path          the data path on real pins: button to LED
+ch03/step-01-button-interrupt     interrupts hand off to work
+ch03/step-02-debounce             a press is a pattern, not an edge
+ch04/step-01-advertiser           be seen: advertising and connections
+ch05/step-01-hids-buttons         the board becomes a keyboard
+ch06/step-01-bonded-keyboard      pairing, bonding, bond management
+ch07/step-01-matrix-scan          the hand-wired 3 by 4 matrix, scanned
+ch07/step-02-matrix-keyboard      the matrix types over the bonded link
+ch08/step-01-keymap-layers        keymaps, a layer, media keys, DIS
+ch09/step-01-xiao-pad             finale: the XIAO pad with a battery
 ```
 
 Every step is a standalone Zephyr application with its own README: what
